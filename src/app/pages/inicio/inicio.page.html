@@ -1,9 +1,78 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title class="ion-text-center" large="small"><h1>G.O. Emanuel</h1></ion-title>
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-thumbnail>
+        <img src="../assets/images/logo.png" width="100px" />
+      </ion-thumbnail>
+    </ion-buttons>
+    <ion-title class="ion-text-left" large="small"><h1>G.O. EMANUEL</h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
+  <h2 class="ion-text-center">Temas de los sabados</h2>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <ion-card>
+        <img src="../assets/images/b2.jpg" alt="" srcset="">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="../assets/images/b2.jpg" alt="" srcset="">
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="../assets/images/b2.jpg" alt="" srcset="">
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <br/>
+<ion-button>
+  <ion-icon name="logo-youtube"></ion-icon>  
+  <ion-label> Temas de los sábados</ion-label>
+</ion-button>
+<ion-button>
+  <ion-icon slot="icon-only" name="add"></ion-icon>
+</ion-button>
+
+
+
+<ion-item>
+  <ion-label>
+    Icon End
+  </ion-label>
+  <ion-icon name="information-circle" slot="end"></ion-icon>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    Large Icon End
+  </ion-label>
+  <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    Small Icon End
+  </ion-label>
+  <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
+</ion-item>
+
+<ion-item>
+  <ion-icon name="star" slot="start"></ion-icon>
+  <ion-label>
+    Icon Start
+  </ion-label>
+</ion-item>
+
+<ion-item>
+  <ion-label>
+    Two Icons End
+  </ion-label>
+  <ion-icon name="checkmark-circle" slot="end"></ion-icon>
+  <ion-icon name="shuffle" slot="end"></ion-icon>
+</ion-item>
 
 </ion-content>
