@@ -10,69 +10,105 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h2 class="ion-text-center">Temas de los sabados</h2>
-  <ion-slides pager="true" [options]="slideOpts">
+  
+  <h2>Temas de los sabados</h2>
+  <ion-slides [options]="slideOpts">
     <ion-slide>
       <ion-card>
-        <img src="../assets/images/b2.jpg" alt="" srcset="">
+        <img src="../assets/images/b2.jpg">
+        <ion-card-header>
+          <ion-card-title>Tema 1</ion-card-title>
+        </ion-card-header>
       </ion-card>
     </ion-slide>
     <ion-slide>
       <ion-card>
-        <img src="../assets/images/b2.jpg" alt="" srcset="">
+        <img src="../assets/images/b2.jpg">
+        <ion-card-header>
+          <ion-card-title>Tema 1</ion-card-title>
+        </ion-card-header>
       </ion-card>
     </ion-slide>
     <ion-slide>
       <ion-card>
-        <img src="../assets/images/b2.jpg" alt="" srcset="">
+        <img src="../assets/images/b2.jpg">
+        <ion-card-header>
+          <ion-card-title>Tema 1</ion-card-title>
+        </ion-card-header>
       </ion-card>
     </ion-slide>
   </ion-slides>
-  <br/>
-<ion-button>
-  <ion-icon name="logo-youtube"></ion-icon>  
-  <ion-label> Temas de los sábados</ion-label>
-</ion-button>
-<ion-button>
-  <ion-icon slot="icon-only" name="add"></ion-icon>
-</ion-button>
+  <h2>Cumpleaños del mes</h2>
+  <ion-slides [options]="slideOpts2">
+    <ion-slide>
+      <div>
+        <img class="slide-img-alto" src="../assets/images/b2.jpg">
+        <span class="ja-font-size-15">Luis Mayta</span><br>
+        <span class="ja-font-size-15">21 de Mayo</span>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img class="slide-img-alto" src="../assets/images/b2.jpg">
+        <span class="ja-font-size-15">Luis Mayta</span><br>
+        <span class="ja-font-size-15">21 de Mayo</span>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div>
+        <img class="slide-img-alto" src="../assets/images/b2.jpg">
+        <span class="ja-font-size-15">Luis Mayta</span><br>
+        <span class="ja-font-size-15">21 de Mayo</span>
+      </div>
+    </ion-slide>
+  </ion-slides>
+  <h2>Calendario de actividades</h2>
+  <ion-list>
 
+    <ion-item>
+      <ion-avatar slot="start" class="ja-avatar-size-60">
+        <img src="../assets/icon/calendario.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Las tentaciones del servidor</h2>
+        <h3>Vie, 30/10/2020 - 20:00</h3>
+        <p>Evento de la Renovacion Carismatica</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start" class="ja-avatar-size-60">
+        <img src="../assets/icon/calendario.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Las tentaciones del servidor</h2>
+        <h3>Vie, 30/10/2020 - 20:00</h3>
+        <p>Evento de la Renovacion Carismatica</p>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start" class="ja-avatar-size-60">
+        <img src="../assets/icon/calendario.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Las tentaciones del servidor</h2>
+        <h3>Vie, 30/10/2020 - 20:00</h3>
+        <p>Evento de la Renovacion Carismatica</p>
+      </ion-label>
+    </ion-item>
 
-
-<ion-item>
-  <ion-label>
-    Icon End
-  </ion-label>
-  <ion-icon name="information-circle" slot="end"></ion-icon>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Large Icon End
-  </ion-label>
-  <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Small Icon End
-  </ion-label>
-  <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
-</ion-item>
-
-<ion-item>
-  <ion-icon name="star" slot="start"></ion-icon>
-  <ion-label>
-    Icon Start
-  </ion-label>
-</ion-item>
-
-<ion-item>
-  <ion-label>
-    Two Icons End
-  </ion-label>
-  <ion-icon name="checkmark-circle" slot="end"></ion-icon>
-  <ion-icon name="shuffle" slot="end"></ion-icon>
-</ion-item>
+  </ion-list>
+  <h2>Blog</h2>
+  <ion-card>
+    <img src="../assets/images/b2.jpg" alt="" srcset="">
+    <ion-card-header>
+      <ion-card-subtitle>29 Octubre 2020 </ion-card-subtitle>
+      <ion-card-title>Los Peligros de Hallowen</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Keep close to Nature's heart... and break clear away, once in awhile,
+      and climb a mountain or spend a week in the woods. Wash your spirit clean.
+    </ion-card-content>
+  </ion-card>
 
 </ion-content>

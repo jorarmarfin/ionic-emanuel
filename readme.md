@@ -4,7 +4,7 @@ Aplicativo que permite gestionar un grupo de oración
 ## Secciones publicas
 * Blog
 * Cumpleaños
-* Hermanos
+* Hermanos | hermano
 * Temas
 * Zoom
 * Calendario

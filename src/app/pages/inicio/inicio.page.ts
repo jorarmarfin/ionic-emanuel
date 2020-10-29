@@ -14,8 +14,8 @@ export class InicioPage implements OnInit {
   };  
   slideOpts2 = {
     slidePerView: 3,
-    spaceBetween: 2,
-    width:250,
+    spaceBetween: 20,
+    width:100,
     freeMode: true,
   }; 
   constructor() { }
