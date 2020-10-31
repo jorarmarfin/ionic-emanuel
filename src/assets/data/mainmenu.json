@@ -1,0 +1,27 @@
+[
+    {
+        "icon": "heart",
+        "name": "Temas",
+        "redirectTo": "/temas"
+    },
+    {
+        "icon": "heart",
+        "name": "Cumpleaños",
+        "redirectTo": "/temas"
+    },
+    {
+        "icon": "heart",
+        "name": "Hermanos",
+        "redirectTo": "/temas"
+    },
+    {
+        "icon": "heart",
+        "name": "Calendario",
+        "redirectTo": "/temas"
+    },
+    {
+        "icon": "heart",
+        "name": "Zoom",
+        "redirectTo": "/temas"
+    }
+]
