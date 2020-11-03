@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginPageModule } from './pages/login/login.module';
 
 const routes: Routes = [
   {
@@ -46,6 +47,11 @@ const routes: Routes = [
   {
     path: 'caja',
     loadChildren: () => import('./pages/caja/caja.module').then( m => m.CajaPageModule)
+  },
+  {
+    path:'',
+    pathMatch:'full',
+    redirectTo:'login'
   }
 ];
 

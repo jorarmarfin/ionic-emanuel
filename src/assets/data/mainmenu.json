@@ -1,27 +1,37 @@
 [
     {
-        "icon": "heart",
+        "icon": "home",
+        "name": "Inicio",
+        "redirectTo": "/"
+    },
+    {
+        "icon": "person",
+        "name": "Perfil",
+        "redirectTo": "/perfil"
+    },
+    {
+        "icon": "book",
         "name": "Temas",
         "redirectTo": "/temas"
     },
     {
-        "icon": "heart",
+        "icon": "ribbon",
         "name": "Cumpleaños",
-        "redirectTo": "/temas"
+        "redirectTo": "/cumples"
     },
     {
-        "icon": "heart",
+        "icon": "people",
         "name": "Hermanos",
-        "redirectTo": "/temas"
+        "redirectTo": "/hermanos"
     },
     {
-        "icon": "heart",
+        "icon": "calendar",
         "name": "Calendario",
-        "redirectTo": "/temas"
+        "redirectTo": "/calendario"
     },
     {
-        "icon": "heart",
+        "icon": "videocam",
         "name": "Zoom",
-        "redirectTo": "/temas"
+        "redirectTo": "/zoom"
     }
 ]
