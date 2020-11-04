@@ -33,5 +33,10 @@
         "icon": "videocam",
         "name": "Zoom",
         "redirectTo": "/zoom"
+    },
+    {
+        "icon": "log-out",
+        "name": "Salir",
+        "redirectTo": "/zoom"
     }
 ]
