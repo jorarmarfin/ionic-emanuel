@@ -12,8 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    canLoad: [UsuarioGuard],
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canLoad:[UsuarioGuard]
   },
   {
     path: 'temas',

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Temas } from 'src/app/inerfaces/interfaces';
+import { DrupalService } from 'src/app/services/drupal.service';
 
 @Component({
   selector: 'app-inicio',
@@ -18,9 +20,15 @@ export class InicioPage implements OnInit {
     width:100,
     freeMode: true,
   }; 
-  constructor() { }
+  temas:Temas;
+  constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
+    this.drupal.getTemasPortada().subscribe(resp=>{
+      this.temas = resp;
+      // console.log(resp[0].enlace.split("/"));
+    });
   }
+
 
 }

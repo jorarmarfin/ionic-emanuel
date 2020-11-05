@@ -14,27 +14,12 @@
   
   <h2>Temas de los sabados</h2>
   <ion-slides [options]="slideOpts">
-    <ion-slide>
+    <ion-slide *ngFor="let item of temas">
       <ion-card>
-        <img src="../assets/images/b2.jpg">
+        <img src="{{ item.enlace  }}">
         <ion-card-header>
-          <ion-card-title>Tema 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <img src="../assets/images/b2.jpg">
-        <ion-card-header>
-          <ion-card-title>Tema 1</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-    <ion-slide>
-      <ion-card>
-        <img src="../assets/images/b2.jpg">
-        <ion-card-header>
-          <ion-card-title>Tema 1</ion-card-title>
+          <ion-card-title>{{ item.titulo }}</ion-card-title>
+          <ion-card-title>{{ item.enlace.split("/")[3] }}</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-slide>

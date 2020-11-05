@@ -13,3 +13,7 @@ export interface Usuario {
     field_tipo: string;
     api_token: string;
   }
+export interface Temas {
+    titulo: string;
+    enlace: string;
+  }

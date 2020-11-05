@@ -6,6 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { Observable } from 'rxjs';
 import { Menu } from './inerfaces/interfaces';
 import { LocalService } from './services/local.service';
+import { DrupalService } from './services/drupal.service';
 
 @Component({
   selector: 'app-root',
@@ -14,11 +15,13 @@ import { LocalService } from './services/local.service';
 })
 export class AppComponent {
   OpcionesMenu: Observable<Menu[]>;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private local:LocalService
+    private local:LocalService,
+    private drupal:DrupalService
   ) {
     this.initializeApp();
   }
@@ -29,5 +32,8 @@ export class AppComponent {
       this.splashScreen.hide();
       this.OpcionesMenu = this.local.getMenuOptions();
     });
+  }
+  logout(){
+    this.drupal.logout();
   }
 }
