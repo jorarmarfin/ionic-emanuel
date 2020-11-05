@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HermanosPageRoutingModule } from './hermanos-routing.module';
 
 import { HermanosPage } from './hermanos.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HermanosPageRoutingModule
+    HermanosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [HermanosPage]
 })

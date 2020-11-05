@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CajaPageRoutingModule } from './caja-routing.module';
 
 import { CajaPage } from './caja.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CajaPageRoutingModule
+    CajaPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [CajaPage]
 })

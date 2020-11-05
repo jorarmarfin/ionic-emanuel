@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ZoomPageRoutingModule } from './zoom-routing.module';
 
 import { ZoomPage } from './zoom.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ZoomPageRoutingModule
+    ZoomPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ZoomPage]
 })

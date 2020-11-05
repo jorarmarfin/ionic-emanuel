@@ -2,7 +2,7 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <form>
+        <form (ngSubmit)="login(FormLogin)" #FormLogin="ngForm">
           <ion-grid fixed>
             <ion-row>
               <ion-col>
@@ -15,12 +15,12 @@
                 <ion-list>
                   <ion-item>
                     <ion-label position="floating">Email</ion-label>
-                    <ion-input name="email" type="email" required ></ion-input>
+                    <ion-input [(ngModel)]="Usuario.email" name="email" type="email" required ></ion-input>
                   </ion-item>
 
                   <ion-item>
                     <ion-label position="floating">Password</ion-label>
-                    <ion-input name="password" type="password" required></ion-input>
+                    <ion-input [(ngModel)]="Usuario.password" name="password" type="password" required></ion-input>
                   </ion-item>
                 </ion-list>
               </ion-col>

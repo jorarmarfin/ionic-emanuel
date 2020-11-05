@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { CumplesPageRoutingModule } from './cumples-routing.module';
 
 import { CumplesPage } from './cumples.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CumplesPageRoutingModule
+    CumplesPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [CumplesPage]
 })
