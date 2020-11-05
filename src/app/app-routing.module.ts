@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { UsuarioGuard } from './guards/usuario.guard';
 import { LoginPageModule } from './pages/login/login.module';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'inicio',
-    pathMatch: 'full'
+    pathMatch: 'full',
+    
   },
   {
     path: 'inicio',
+    canLoad: [UsuarioGuard],
     loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
