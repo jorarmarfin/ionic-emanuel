@@ -17,3 +17,17 @@ export interface Temas {
     titulo: string;
     enlace: string;
   }
+export interface Cumples {
+    nombre_completo?: string;
+    fecha_nacimiento?: string;
+    edad?: string;
+    telefonos?: string;
+    cumple?: string;
+  }
+export interface Calendario {
+  titulo?: string;
+  resumen?: string;
+  descripcion?: string;
+  fecha?: string;
+  enlace?: string;
+}

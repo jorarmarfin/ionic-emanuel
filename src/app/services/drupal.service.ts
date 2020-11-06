@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { promise } from 'protractor';
 import { environment } from 'src/environments/environment';
-import { Temas } from '../inerfaces/interfaces';
+import { Calendario, Cumples, Temas } from '../inerfaces/interfaces';
 import { UsuarioModel } from '../models/usuario.model';
 
 const URL = environment.url;
@@ -24,6 +24,14 @@ export class DrupalService {
     ) { }
   getTemasPortada(){
     return this.http.get<Temas>(`${URL}/recurso/tema_sabado?_format=json`);
+  }
+  getCumplesDelMes(){
+    var f = new Date();
+    return this.http.get<Cumples>(`${URL}/cumple/${f.getMonth()+1}?_format=json`);
+  }
+  getCalendarioDelMes(){
+    var f = new Date();
+    return this.http.get<Calendario>(`${URL}/calendario/mes/${f.getMonth()+1}?_format=json`);
   }
   login(email:string,password:string){
 

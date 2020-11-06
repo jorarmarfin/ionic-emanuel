@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Temas } from 'src/app/inerfaces/interfaces';
+import { Calendario, Cumples, Temas } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 
 @Component({
@@ -21,12 +21,20 @@ export class InicioPage implements OnInit {
     freeMode: true,
   }; 
   temas:Temas;
+  cumples:Cumples;
+  calendario:Calendario;
   constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
     this.drupal.getTemasPortada().subscribe(resp=>{
       this.temas = resp;
-      // console.log(resp[0].enlace.split("/"));
+    });
+    this.drupal.getCumplesDelMes().subscribe(resp=>{
+      this.cumples = resp;
+    });
+    this.drupal.getCalendarioDelMes().subscribe(resp=>{
+      console.log(resp.length);
+      this.calendario = resp;
     });
   }
 

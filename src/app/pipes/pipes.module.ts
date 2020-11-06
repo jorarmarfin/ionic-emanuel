@@ -6,7 +6,7 @@ import { ImgyoutubePipe } from './imgyoutube.pipe';
 
 @NgModule({
   declarations: [ImgyoutubePipe],
-  exports:[
+  exports: [
     ImgyoutubePipe
   ]
 })
