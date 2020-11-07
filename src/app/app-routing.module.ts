@@ -55,6 +55,10 @@ const routes: Routes = [
     path:'',
     pathMatch:'full',
     redirectTo:'login'
+  },
+  {
+    path: 'tema/:titulo/:idyoutube',
+    loadChildren: () => import('./pages/tema/tema.module').then( m => m.TemaPageModule)
   }
 ];
 

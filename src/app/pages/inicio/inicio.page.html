@@ -1,7 +1,7 @@
 <ion-header >
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-menu-button menu="MainMenu"></ion-menu-button>
+      <ion-menu-button menu="MainMenu" autoHide="false"></ion-menu-button>
       <ion-thumbnail>
         <img src="../assets/images/logo.png" width="100px" />
       </ion-thumbnail>
@@ -14,7 +14,7 @@
   
   <h2>Temas de los sabados</h2>
   <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let item of temas">
+    <ion-slide *ngFor="let item of temas; let i=index" (click)="RedirigeTema(item.titulo,item.enlace)" >
       <ion-card>
         <img [src]="item.enlace|imgyoutube">
         <ion-card-header>
@@ -27,23 +27,23 @@
   <ion-slides [options]="slideOpts2">
     <ion-slide *ngFor="let item of cumples">
       <div>
-        <img class="slide-img-alto" src="../assets/images/b2.jpg">
+        <img class="slide-img-alto" src="{{ item.imagen }}">
         <span class="ja-font-size-15">{{ item.nombre_completo }}</span><br>
         <span class="ja-font-size-15">{{ item.cumple }}</span>
       </div>
     </ion-slide>
   </ion-slides>
-  <h2>Actividades del Mes</h2>
+  <h2>Actividades mas próximas</h2>
   <ion-list>
 
     <ion-item *ngFor="let item of calendario">
       <ion-avatar slot="start" class="ja-avatar-size-60">
-        <img src="../assets/icon/calendario.png">
+        <img [src]="item.tipo_evento|imgcalendario">
       </ion-avatar>
       <ion-label>
-        <h2>{{ item.titulo }}</h2>
-        <h3>{{ item.fecha }}</h3>
-        <p>Evento de la Renovacion Carismatica</p>
+        <ion-title size="small"><strong>{{ item.titulo }}</strong></ion-title>
+        <ion-title size="small">{{ item.fecha }}</ion-title>
+        <ion-title size="small" color="danger">{{ item.resumen }}</ion-title>
       </ion-label>
     </ion-item>
 

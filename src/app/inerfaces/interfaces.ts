@@ -23,6 +23,7 @@ export interface Cumples {
     edad?: string;
     telefonos?: string;
     cumple?: string;
+    imagen?: string;
   }
 export interface Calendario {
   titulo?: string;
@@ -30,4 +31,5 @@ export interface Calendario {
   descripcion?: string;
   fecha?: string;
   enlace?: string;
+  tipo_evento?: string;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { Calendario, Cumples, Temas } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 
@@ -23,7 +25,14 @@ export class InicioPage implements OnInit {
   temas:Temas;
   cumples:Cumples;
   calendario:Calendario;
-  constructor(private drupal:DrupalService) { }
+
+  constructor(
+    private drupal:DrupalService, 
+    private router:Router,
+    private menu: MenuController
+    ) {
+      this.menu.enable(true, 'MainMenu');
+     }
 
   ngOnInit() {
     this.drupal.getTemasPortada().subscribe(resp=>{
@@ -32,10 +41,14 @@ export class InicioPage implements OnInit {
     this.drupal.getCumplesDelMes().subscribe(resp=>{
       this.cumples = resp;
     });
-    this.drupal.getCalendarioDelMes().subscribe(resp=>{
-      console.log(resp.length);
+    this.drupal.getCalendarioPortada().subscribe(resp=>{
       this.calendario = resp;
     });
+  }
+  RedirigeTema(titulo:string,enlace:string){
+    let idyoutube = enlace.split('/',4)[3];
+    this.router.navigateByUrl(`tema/${titulo}/${idyoutube}`);
+
   }
 
 

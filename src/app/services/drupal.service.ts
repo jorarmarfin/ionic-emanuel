@@ -33,6 +33,11 @@ export class DrupalService {
     var f = new Date();
     return this.http.get<Calendario>(`${URL}/calendario/mes/${f.getMonth()+1}?_format=json`);
   }
+  getCalendarioPortada(){
+    var f = new Date();
+    var fecha_actual = f.getDate() + "-" + (f.getMonth() +1) + "-" + f.getFullYear();
+    return this.http.get<Calendario>(`${URL}/calendario/portada?_format=json&field_fecha_value=${fecha_actual}`);
+  }
   login(email:string,password:string){
 
     return new Promise(resolve=>{
