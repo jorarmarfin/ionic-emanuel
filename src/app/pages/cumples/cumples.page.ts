@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cumples } from 'src/app/inerfaces/interfaces';
+import { DrupalService } from 'src/app/services/drupal.service';
 
 @Component({
   selector: 'app-cumples',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CumplesPage implements OnInit {
 
-  constructor() { }
+  cumples:Cumples;
+
+  constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
+    this.drupal.getCumples().subscribe(resp=>{
+      this.cumples = resp;
+    });
   }
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Calendario } from 'src/app/inerfaces/interfaces';
+import { DrupalService } from 'src/app/services/drupal.service';
 
 @Component({
   selector: 'app-calendario',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalendarioPage implements OnInit {
 
-  constructor() { }
+  calendario:Calendario;
+
+  constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
+    this.drupal.getCalendarioPortada().subscribe(resp=>{
+      this.calendario = resp;
+    });
   }
 
 }

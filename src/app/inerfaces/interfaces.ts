@@ -10,10 +10,14 @@ export interface Usuario {
     telefonos: string;
     cumple: string;
     email: string;
-    field_tipo: string;
+    tipo: string;
     api_token: string;
   }
 export interface Temas {
+    titulo: string;
+    enlace: string;
+  }
+export interface Recursos {
     titulo: string;
     enlace: string;
   }
@@ -32,4 +36,10 @@ export interface Calendario {
   fecha?: string;
   enlace?: string;
   tipo_evento?: string;
+}
+export interface Hermanos {
+  nombre_completo: string;
+  edad: string;
+  telefonos: string;
+  fecha_nacimiento: string;
 }

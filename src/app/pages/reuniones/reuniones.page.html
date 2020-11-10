@@ -1,5 +1,12 @@
 <app-header titulo="Reuniones de coordinacion"></app-header>
 
-<ion-content>
-
+<ion-content >
+    <ion-list>
+        <ion-list-header>
+            <ion-label>Aquí podremos ver los temas realizados en el grupo y subidos al Youtube</ion-label>
+        </ion-list-header>
+        <ion-item *ngFor="let item of recursos; let i=index">
+            <ion-label>{{ item.titulo }}</ion-label>
+        </ion-item>
+    </ion-list>
 </ion-content>

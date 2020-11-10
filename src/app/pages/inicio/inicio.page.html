@@ -1,31 +1,33 @@
 <ion-header >
-  <ion-toolbar color="primary">
+  <ion-toolbar color="tertiary">
     <ion-buttons slot="start">
       <ion-menu-button menu="MainMenu" autoHide="false"></ion-menu-button>
       <ion-thumbnail>
         <img src="../assets/images/logo.png" width="100px" />
       </ion-thumbnail>
     </ion-buttons>
-    <ion-title class="ion-text-left" large="small"><h1>G.O. EMANUEL</h1></ion-title>
+    <ion-title class="ion-text-left title-header"><h1>G.O. EMANUEL</h1></ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content color="medium-tint">
   
-  <h5>Temas de los sabados</h5>
+  <ion-text color="primary" class="title-section">
+    <h2>Tema de los Sábados</h2>
+  </ion-text>
   <ion-slides [options]="slideOpts">
     <ion-slide *ngFor="let item of temas; let i=index" (click)="RedirigeTema(item.titulo,item.enlace)" >
       <ion-card>
         <img [src]="item.enlace|imgyoutube">
         <ion-card-header>
-          <ion-card-title><strong>{{ item.titulo }}</strong></ion-card-title>
+          <ion-card-title class="title-small aling-start">{{ item.titulo }}</ion-card-title>
         </ion-card-header>
       </ion-card>
     </ion-slide>
   </ion-slides>
 
   <div class="mycontainer-blue ion-padding">
-    <h5><strong>Cumpleaños del mes</strong></h5>
+    <h2>Cumpleaños del mes</h2>
     <p>Lista de los cumpleaños del mes</p>
     <ion-slides [options]="slideOpts2">
       <ion-slide *ngFor="let item of cumples">
@@ -37,20 +39,26 @@
       </ion-slide>
     </ion-slides>
   </div>
-
-  <h5>Actividades mas próximas</h5>
+  <ion-text color="primary" class="title-section">
+    <h2>Actividades mas próximas</h2>
+  </ion-text>
   <ion-list>
-
-    <ion-item *ngFor="let item of calendario">
-      <ion-avatar slot="start" class="ja-avatar-size-60">
-        <img [src]="item.tipo_evento|imgcalendario">
-      </ion-avatar>
-      <ion-label>
-        <ion-title size="small"><strong>{{ item.titulo }}</strong></ion-title>
-        <ion-title size="small">{{ item.fecha }}</ion-title>
-        <ion-title size="small" color="danger">{{ item.resumen }}</ion-title>
-      </ion-label>
-    </ion-item>
+    <ion-card *ngFor="let item of calendario">
+      <ion-item lines="none" detail="true">
+        <ion-thumbnail slot="start">
+          <img [src]="item.tipo_evento|imgcalendario">      
+        </ion-thumbnail>
+        <ion-label>
+          <ion-text color="dark" class="ion-text-wrap">
+            <p class="evento-title">{{ item.titulo }}</p>
+          </ion-text>
+          <p>{{ item.fecha }}</p>
+          <p>{{ item.resumen }}</p>
+  
+        </ion-label>
+      </ion-item>
+    </ion-card>
+    <br>
 
   </ion-list>
 

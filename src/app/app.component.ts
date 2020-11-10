@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Menu } from './inerfaces/interfaces';
 import { LocalService } from './services/local.service';
 import { DrupalService } from './services/drupal.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-root',
@@ -14,14 +15,17 @@ import { DrupalService } from './services/drupal.service';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+
   OpcionesMenu: Observable<Menu[]>;
+  tipo:string;
 
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private local:LocalService,
-    private drupal:DrupalService
+    private drupal:DrupalService,
+    private storage:Storage
   ) {
     this.initializeApp();
   }
@@ -31,6 +35,11 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
       this.OpcionesMenu = this.local.getMenuOptions();
+      this.storage.get('hermano').then(resp=>{
+          this.tipo = resp.tipo;
+          console.log(resp);
+      });
+
     });
   }
   logout(){

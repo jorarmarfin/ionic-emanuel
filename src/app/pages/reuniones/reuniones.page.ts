@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Recursos } from 'src/app/inerfaces/interfaces';
+import { DrupalService } from 'src/app/services/drupal.service';
 
 @Component({
   selector: 'app-reuniones',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReunionesPage implements OnInit {
 
-  constructor() { }
+  recursos:Recursos;
+
+  constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
+    this.drupal.getRecursos('tema_sabado').subscribe(resp=>{
+      this.recursos = resp;
+    });
   }
 
 }

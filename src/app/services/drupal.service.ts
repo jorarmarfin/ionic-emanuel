@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { promise } from 'protractor';
 import { environment } from 'src/environments/environment';
-import { Calendario, Cumples, Temas } from '../inerfaces/interfaces';
+import { Calendario, Cumples, Hermanos, Recursos, Temas } from '../inerfaces/interfaces';
 import { UsuarioModel } from '../models/usuario.model';
 
 const URL = environment.url;
@@ -29,6 +29,9 @@ export class DrupalService {
     var f = new Date();
     return this.http.get<Cumples>(`${URL}/cumple/${f.getMonth()+1}?_format=json`);
   }
+  getCumples(){
+    return this.http.get<Cumples>(`${URL}/cumple/all?_format=json`);
+  }
   getCalendarioDelMes(){
     var f = new Date();
     return this.http.get<Calendario>(`${URL}/calendario/mes/${f.getMonth()+1}?_format=json`);
@@ -36,7 +39,13 @@ export class DrupalService {
   getCalendarioPortada(){
     var f = new Date();
     var fecha_actual = f.getDate() + "-" + (f.getMonth() +1) + "-" + f.getFullYear();
-    return this.http.get<Calendario>(`${URL}/calendario/portada?_format=json&field_fecha_value=${fecha_actual}`);
+    return this.http.get<Calendario>(`${URL}/calendario/portada?_format=json&field_fecha_value=${fecha_actual}&sort_by=field_fecha_value&sort_order=ASC`);
+  }
+  getRecursos(categoria:string){
+    return this.http.get<Recursos>(`${URL}/recurso/${categoria}?_format=json`);
+  }
+  getHermanos(){
+    return this.http.get<Hermanos>(`${URL}/hermanos?_format=json`);
   }
   login(email:string,password:string){
 

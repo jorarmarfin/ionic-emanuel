@@ -1,7 +1,7 @@
 <ion-app>
   <ion-menu side="start" menuId="MainMenu" contentId="main">
     <ion-header>
-      <ion-toolbar >
+      <ion-toolbar color="tertiary">
         <ion-thumbnail slot="start">
           <img src="../assets/images/logo.png" />
         </ion-thumbnail>
@@ -12,14 +12,21 @@
       <ion-list>
         <ion-item *ngFor="let item of OpcionesMenu | async"
           [routerLink]="item.redirectTo">
-          <ion-icon name="{{ item.icon }}" slot="start"></ion-icon>
+          <ion-icon name="{{ item.icon }}" slot="start" color="tertiary"></ion-icon>
           <ion-label>{{ item.name }}</ion-label>
           
         </ion-item>
+        <ion-item *ngIf="tipo=='Servidor'">
+          <ion-icon name="contract" slot="start" color="tertiary"></ion-icon>
+          <ion-label>Reuniones </ion-label>
+        </ion-item>
+        <ion-item >
+          <ion-icon name="card" slot="start" color="tertiary"></ion-icon>
+          <ion-label>Caja</ion-label>
+        </ion-item>
         <ion-item (click)="logout()">
-          <ion-icon name="log-out" slot="start"></ion-icon>
+          <ion-icon name="log-out" slot="start" color="tertiary"></ion-icon>
           <ion-label>Salir</ion-label>
-          
         </ion-item>
       </ion-list>
     </ion-content>

@@ -5,11 +5,16 @@
         <ion-list-header>
             <ion-label>Aquí podremos ver la lista de hermanos del grupo</ion-label>
         </ion-list-header>
-        <ion-item>
+        <ion-item *ngFor="let item of hermanos">
             <ion-avatar slot="start">
-                <img src="../assets/images/logo.png" />
+                <img src="{{ item.imagen }}" />
             </ion-avatar>
-            <ion-label>Luis Mayta</ion-label>
+            <ion-label>
+                <ion-text color="primary">
+                    <ion-label>{{ item.nombre_completo }}</ion-label>
+                </ion-text>
+                <p>{{ item.telefonos }} | {{ item.email }}</p>
+            </ion-label>
         </ion-item>
     </ion-list>
 </ion-content>

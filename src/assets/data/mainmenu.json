@@ -15,7 +15,7 @@
         "redirectTo": "/temas"
     },
     {
-        "icon": "ribbon",
+        "icon": "gift",
         "name": "Cumpleaños",
         "redirectTo": "/cumples"
     },
