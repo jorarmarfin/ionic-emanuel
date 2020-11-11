@@ -10,8 +10,9 @@ export interface Usuario {
     telefonos: string;
     cumple: string;
     email: string;
-    tipo: string;
+    tipo?: string;
     api_token: string;
+    id:number;
   }
 export interface Temas {
     titulo: string;
@@ -42,4 +43,6 @@ export interface Hermanos {
   edad: string;
   telefonos: string;
   fecha_nacimiento: string;
+  id:number;
+  tipo?:string;
 }

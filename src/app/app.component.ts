@@ -36,8 +36,9 @@ export class AppComponent {
       this.splashScreen.hide();
       this.OpcionesMenu = this.local.getMenuOptions();
       this.storage.get('hermano').then(resp=>{
+        if (resp) {
           this.tipo = resp.tipo;
-          console.log(resp);
+        }
       });
 
     });

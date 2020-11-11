@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'https://emanuel.catolicosoy.net/api'
+  url: 'https://emanuel.catolicosoy.net'
 };
 
 /*
