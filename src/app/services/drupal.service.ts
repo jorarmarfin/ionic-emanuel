@@ -53,15 +53,14 @@ export class DrupalService {
   getHermanos(){
     return this.http.get<Hermanos>(`${URL}/api/hermanos?_format=json`);
   }
-  setHermano(){
+  setHermano(nid:string,clave:string){
     
     let _hermano = {
             "type": [{ "target_id": "personal"}],
-            "field_apellidos": [{"value": "ionic"}]
+            "field_clave": [{"value": clave}]
         }
     const body=JSON.stringify(_hermano);
-    // console.log(body);
-    return this.http.patch(`${URL}/node/8?_format=json`,body,httpHeader);
+    return this.http.patch(`${URL}/node/${nid}?_format=json`,body,httpHeader);
   }
   login(email:string,password:string){
 
