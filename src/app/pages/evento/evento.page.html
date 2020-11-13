@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-wrap">{{ evento.titulo }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()" icon="close-outline" ><ion-icon name="close-outline"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-text color="primary">
+    {{ evento.fecha }}
+  </ion-text>
+  <p>{{ evento.resumen }}</p>
+  <p [innerHTML]="evento.descripcion"></p>
+  <p [innerHTML]="evento.observaciones"></p>
+
+</ion-content>

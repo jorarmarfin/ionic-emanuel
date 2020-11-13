@@ -43,7 +43,7 @@
     <h2>Actividades mas próximas</h2>
   </ion-text>
   <ion-list>
-    <ion-card *ngFor="let item of calendario">
+    <ion-card *ngFor="let item of calendario; let i=index" (click)="presentModal(i)">
       <ion-item lines="none" detail="true">
         <ion-thumbnail slot="start">
           <img [src]="item.tipo_evento|imgcalendario">      

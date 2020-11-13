@@ -59,6 +59,10 @@ const routes: Routes = [
   {
     path: 'tema/:titulo/:idyoutube',
     loadChildren: () => import('./pages/tema/tema.module').then( m => m.TemaPageModule)
+  },
+  {
+    path: 'evento',
+    loadChildren: () => import('./pages/evento/evento.module').then( m => m.EventoPageModule)
   }
 ];
 

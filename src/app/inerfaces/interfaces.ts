@@ -37,6 +37,7 @@ export interface Calendario {
   fecha?: string;
   enlace?: string;
   tipo_evento?: string;
+  observaciones?: string;
 }
 export interface Hermanos {
   nombre_completo: string;
