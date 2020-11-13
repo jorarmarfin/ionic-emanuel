@@ -7,6 +7,8 @@ import { environment } from 'src/environments/environment';
 import { Calendario, Cumples, Hermanos, Recursos, Temas } from '../inerfaces/interfaces';
 import { UsuarioModel } from '../models/usuario.model';
 
+import * as CryptoJS from 'crypto-js';
+
 const URL = environment.url;
 const httpHeader = {
   headers: new HttpHeaders({
@@ -54,10 +56,11 @@ export class DrupalService {
     return this.http.get<Hermanos>(`${URL}/api/hermanos?_format=json`);
   }
   setHermano(nid:string,clave:string){
-    
+    let hash = CryptoJS.MD5(clave);
     let _hermano = {
             "type": [{ "target_id": "personal"}],
-            "field_clave": [{"value": clave}]
+            "field_clave": [{"value": clave}],
+            "field_token": [{"value": hash}]
         }
     const body=JSON.stringify(_hermano);
     return this.http.patch(`${URL}/node/${nid}?_format=json`,body,httpHeader);
