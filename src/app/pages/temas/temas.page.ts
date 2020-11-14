@@ -19,9 +19,7 @@ export class TemasPage implements OnInit {
       this.recursos = resp;
     });
   }
-  mostrarRecurso(i:string){
-    console.log(this.recursos[i]);
-  }
+
   RedirigeTema(titulo:string,enlace:string){
     let idyoutube = enlace.split('/',4)[3];
     this.router.navigateByUrl(`tema/${titulo}/${idyoutube}`);

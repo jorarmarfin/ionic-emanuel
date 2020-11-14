@@ -38,9 +38,12 @@ export class DrupalService {
   getCumples(){
     return this.http.get<Cumples>(`${URL}/api/cumple/all?_format=json`);
   }
-  getCalendarioDelMes(){
-    var f = new Date();
-    return this.http.get<Calendario>(`${URL}/api/calendario/mes/${f.getMonth()+1}?_format=json`);
+  getCalendarioDelMes(mes?:number){
+    let _mes = new Date().getMonth()+1;
+    if (mes) {
+      _mes=mes;
+    }
+    return this.http.get<Calendario>(`${URL}/api/calendario/mes/${_mes}?_format=json`);
   }
   getCalendarioPortada(){
     var f = new Date();
@@ -53,7 +56,7 @@ export class DrupalService {
   getHermanos(){
     return this.http.get<Hermanos>(`${URL}/api/hermanos?_format=json`);
   }
-  setHermano(nid:string,clave:string){
+  setHermano(nid:number,clave:string){
     let _hermano = {
             "type": [{ "target_id": "personal"}],
             "field_clave": [{"value": clave}]

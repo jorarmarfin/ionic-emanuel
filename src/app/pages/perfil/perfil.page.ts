@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { from } from 'rxjs';
+import { Hermanos } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 
 
@@ -14,18 +15,24 @@ import { DrupalService } from 'src/app/services/drupal.service';
 })
 export class PerfilPage implements OnInit {
 
+  hermano:Hermanos={};
+
   constructor(private drupal:DrupalService,
     private storage:Storage,
-    public toastCtrl: ToastController) { }
-
-  ngOnInit() { }
-  actualizaClave(f:NgForm){   
-    this.storage.get('hermano').then(resp=>{
-      this.drupal.setHermano(resp.nid,f.value.clave).subscribe(resp=>{
-        if (resp) {
-          this.presentToast();
-        }
+    public toastCtrl: ToastController) {
+      this.storage.get('hermano').then(resp=>{
+        this.hermano = resp;
       });
+
+     }
+
+  ngOnInit() {
+  }
+  actualizaClave(f:NgForm){   
+    this.drupal.setHermano(this.hermano.id,f.value.clave).subscribe(resp=>{
+      if (resp) {
+        this.presentToast();
+      }
     });
 
   }

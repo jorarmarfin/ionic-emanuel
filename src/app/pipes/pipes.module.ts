@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ImgyoutubePipe } from './imgyoutube.pipe';
 import { ImgcalendarioPipe } from './imgcalendario.pipe';
 import { LinkyoutubePipe } from './linkyoutube.pipe';
+import { NoimagenPipe } from './noimagen.pipe';
 
 
 
 @NgModule({
-  declarations: [ImgyoutubePipe, ImgcalendarioPipe, LinkyoutubePipe],
+  declarations: [ImgyoutubePipe, ImgcalendarioPipe, LinkyoutubePipe, NoimagenPipe],
   exports: [
     ImgyoutubePipe,
     ImgcalendarioPipe,
-    LinkyoutubePipe
+    LinkyoutubePipe,
+    NoimagenPipe
   ]
 })
 export class PipesModule { }

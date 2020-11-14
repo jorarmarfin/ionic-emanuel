@@ -18,5 +18,11 @@ export class CalendarioPage implements OnInit {
       this.calendario = resp;
     });
   }
+  porMes(event:any){
+    let mes  =new Date(event.detail.value).getMonth()+1;
+    this.drupal.getCalendarioDelMes(mes).subscribe(resp=>{
+      this.calendario = resp;
+    });
+  }
 
 }

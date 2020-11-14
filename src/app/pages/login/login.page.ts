@@ -12,8 +12,8 @@ import { DrupalService } from 'src/app/services/drupal.service';
 export class LoginPage implements OnInit {
   
   Usuario: UsuarioModel={
-    email:'luis.mayta@gmail.com',
-    password:'321654987'
+    email:'',
+    password:''
   }
 
   constructor(

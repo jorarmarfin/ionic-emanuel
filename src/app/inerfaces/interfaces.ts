@@ -12,6 +12,7 @@ export interface Usuario {
     email: string;
     tipo?: string;
     api_token: string;
+    imagen: string;
     id:number;
   }
 export interface Temas {
@@ -40,10 +41,11 @@ export interface Calendario {
   observaciones?: string;
 }
 export interface Hermanos {
-  nombre_completo: string;
-  edad: string;
-  telefonos: string;
-  fecha_nacimiento: string;
-  id:number;
+  nombre_completo?: string;
+  edad?: string;
+  telefonos?: string;
+  fecha_nacimiento?: string;
+  id?:number;
   tipo?:string;
+  imagen?:string;
 }

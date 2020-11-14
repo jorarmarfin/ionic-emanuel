@@ -7,7 +7,7 @@
         </ion-list-header>
         <ion-item *ngFor="let item of hermanos">
             <ion-avatar slot="start">
-                <img src="{{ item.imagen }}" />
+                <img [src]="item.imagen|noimagen" />
             </ion-avatar>
             <ion-label>
                 <ion-text color="primary">

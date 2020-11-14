@@ -7,7 +7,4 @@ Cordova reference documentation:
 - Icons: https://cordova.apache.org/docs/en/latest/config_ref/images.html
 - Splash Screens: https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/
 
-{
-    "type": [{ "target_id": "personal"}],
-    "field_apellidos": [{"value": "Mayta Campos"}]
-}
+

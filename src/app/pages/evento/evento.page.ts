@@ -13,7 +13,6 @@ export class EventoPage implements OnInit {
   constructor(private modalCtrl:ModalController) { }
 
   ngOnInit() {
-    console.log(this.evento);
   }
   cerrar(){
     this.modalCtrl.dismiss();

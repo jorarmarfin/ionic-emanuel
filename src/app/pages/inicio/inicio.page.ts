@@ -45,7 +45,6 @@ export class InicioPage implements OnInit {
     });
     this.drupal.getCalendarioPortada().subscribe(resp=>{
       this.calendario = resp;
-      console.log(resp);
     });
   }
   RedirigeTema(titulo:string,enlace:string){
