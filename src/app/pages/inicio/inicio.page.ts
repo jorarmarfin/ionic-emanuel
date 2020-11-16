@@ -37,6 +37,9 @@ export class InicioPage implements OnInit {
      }
 
   ngOnInit() {
+    this.cargaData();
+  }
+  cargaData(){
     this.drupal.getTemasPortada().subscribe(resp=>{
       this.temas = resp;
     });
@@ -46,6 +49,21 @@ export class InicioPage implements OnInit {
     this.drupal.getCalendarioPortada().subscribe(resp=>{
       this.calendario = resp;
     });
+  }
+  async doRefresh(event){
+    
+    await this.drupal.getTemasPortada().subscribe(resp=>{
+      this.temas = resp;
+    });
+    await this.drupal.getCumplesDelMes().subscribe(resp=>{
+      this.cumples = resp;
+    });
+    await this.drupal.getCalendarioPortada().subscribe(resp=>{
+      this.calendario = resp;
+    },err=>{},()=>{
+      event.target.complete();
+    });
+
   }
   RedirigeTema(titulo:string,enlace:string){
     let idyoutube = enlace.split('/',4)[3];

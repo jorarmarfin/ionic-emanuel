@@ -14,13 +14,17 @@ export class CalendarioPage implements OnInit {
   constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
-    this.drupal.getCalendarioPortada().subscribe(resp=>{
-      this.calendario = resp;
-    });
+    let date = new Date();
+    let f = `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()}`;
+    let m  = date.getMonth()+1;
+    this.cargarEventosMes(m,f,0);
   }
   porMes(event:any){
     let mes  =new Date(event.detail.value).getMonth()+1;
-    this.drupal.getCalendarioDelMes(mes).subscribe(resp=>{
+    this.cargarEventosMes(mes,'',0);
+  }
+  cargarEventosMes(mes:number,fecha:string='',pagina:number=0){
+    this.drupal.getCalendarioDelMes(mes,fecha,pagina).subscribe(resp=>{
       this.calendario = resp;
     });
   }

@@ -10,8 +10,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="medium-tint">
-  
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
   <ion-text color="primary" class="title-section">
     <h2>Tema de los Sábados</h2>
   </ion-text>

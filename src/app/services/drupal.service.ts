@@ -36,14 +36,14 @@ export class DrupalService {
     return this.http.get<Cumples>(`${URL}/api/cumple/${f.getMonth()+1}?_format=json`);
   }
   getCumples(){
-    return this.http.get<Cumples>(`${URL}/api/cumple/all?_format=json`);
+    return this.http.get<Cumples>(`${URL}/api/cumple/mes?_format=json`);
   }
-  getCalendarioDelMes(mes?:number){
+  getCalendarioDelMes(mes?:number,fecha:string='',pagina:number=0){
     let _mes = new Date().getMonth()+1;
     if (mes) {
       _mes=mes;
     }
-    return this.http.get<Calendario>(`${URL}/api/calendario/mes/${_mes}?_format=json`);
+    return this.http.get<Calendario>(`${URL}/api/calendario/mes/${_mes}?_format=json&field_fecha_value=${fecha}&page=${pagina}`);
   }
   getCalendarioPortada(){
     var f = new Date();
