@@ -10,12 +10,12 @@
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item *ngFor="let item of OpcionesMenu | async"
-          [routerLink]="item.redirectTo">
-          <ion-icon name="{{ item.icon }}" slot="start" color="tertiary"></ion-icon>
-          <ion-label>{{ item.name }}</ion-label>
-          
-        </ion-item>
+        <ion-menu-toggle *ngFor="let item of OpcionesMenu | async" [routerLink]="item.redirectTo">
+          <ion-item >
+            <ion-icon name="{{ item.icon }}" slot="start" color="tertiary"></ion-icon>
+            <ion-label>{{ item.name }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
         <ion-item *ngIf="tipo=='Servidor'">
           <ion-icon name="contract" slot="start" color="tertiary"></ion-icon>
           <ion-label>Reuniones </ion-label>
