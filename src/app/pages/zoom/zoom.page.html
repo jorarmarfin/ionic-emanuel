@@ -5,9 +5,11 @@
         <ion-list-header>
             <ion-label>Aquí podremos ver la lista de enlaces de Zoom</ion-label>
         </ion-list-header>
-        <ion-item *ngFor="let item of recursos; let i=index" (click)="mostrarRecurso(i)">
-            
+        <ion-item *ngFor="let item of recursos; let i=index" >
             <ion-label>{{ item.titulo }}</ion-label>
+            <ion-button fill="clear" (click)="Action(i)">
+                <ion-icon slot="icon-only"  name="ellipsis-vertical"></ion-icon>
+            </ion-button>
         </ion-item>
     </ion-list>
 </ion-content>
