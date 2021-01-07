@@ -5,11 +5,6 @@
         "redirectTo": "/"
     },
     {
-        "icon": "person",
-        "name": "Perfil",
-        "redirectTo": "/perfil"
-    },
-    {
         "icon": "book",
         "name": "Temas de los sábados",
         "redirectTo": "/temas"

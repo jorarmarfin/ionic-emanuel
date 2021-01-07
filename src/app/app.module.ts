@@ -13,6 +13,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { IonicStorageModule } from '@ionic/storage';
 
+import localePy from '@angular/common/locales/es';
+import { registerLocaleData } from '@angular/common';
+
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
+registerLocaleData(localePy);
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +29,9 @@ import { IonicStorageModule } from '@ionic/storage';
     IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase)
+
     
   ],
   providers: [

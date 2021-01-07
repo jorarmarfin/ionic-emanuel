@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CumplesPageRoutingModule } from './cumples-routing.module';
+import { EmanuelPageRoutingModule } from './emanuel-routing.module';
 
-import { CumplesPage } from './cumples.page';
+import { EmanuelPage } from './emanuel.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CumplesPageRoutingModule,
-    ComponentsModule,
-    PipesModule
+    EmanuelPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [CumplesPage]
+  declarations: [EmanuelPage]
 })
-export class CumplesPageModule {}
+export class EmanuelPageModule {}

@@ -20,8 +20,9 @@ export interface Temas {
     enlace: string;
   }
 export interface Recursos {
-    titulo: string;
-    enlace: string;
+    titulo?: string;
+    enlace?: string;
+    tipo?: string;
   }
 export interface Cumples {
     nombre_completo?: string;
@@ -42,10 +43,33 @@ export interface Calendario {
 }
 export interface Hermanos {
   nombre_completo?: string;
+  apellidos?: string;
+  nombres?: string;
   edad?: string;
   telefonos?: string;
   fecha_nacimiento?: string;
   id?:number;
   tipo?:string;
   imagen?:string;
+  email?:string;
+}
+export interface Avisos {
+  tipo?:string;
+  titulo?:string;
+  descripcion?:string;
+  color?:string;
+  html?:string;
+}
+export interface DataEmanuel {
+  descripcion?:string;
+  mision?:string;
+  vision?:string;
+  historia?:string;
+  coordinacion?:string;
+  caja?:string;
+  cuenta?:string;
+}
+export interface Cronograma {
+  hora?:string;
+  activo?:string;
 }

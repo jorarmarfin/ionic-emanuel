@@ -66,3 +66,10 @@ h1{
 .evento-title {
     font-weight: 600;
 }
+
+$sizes: "10","15", "20", "30", "40", "80";
+@each $size in $sizes {
+    .my-font-#{$size} {
+        font-size: #{$size}px;
+    }
+}

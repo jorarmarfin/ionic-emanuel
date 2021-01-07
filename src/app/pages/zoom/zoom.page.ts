@@ -4,6 +4,7 @@ import { Recursos } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 import { ActionSheetController } from '@ionic/angular';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 
 @Component({
@@ -13,15 +14,16 @@ import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 })
 export class ZoomPage implements OnInit {
 
-  recursos:Recursos;
+  recursos:Recursos[]=[];
 
-  constructor(private drupal:DrupalService, 
+  constructor(private drupal:DrupalService,
+    private firebase:FirebaseService,
     private iab:InAppBrowser,
     private actionSheetCtrl: ActionSheetController,
     private socialSharing: SocialSharing) { }
 
   ngOnInit() {
-    this.drupal.getRecursos('zoom').subscribe(resp=>{
+    this.firebase.getRecursos('zoom').subscribe(resp=>{
       this.recursos = resp;
     });
   }

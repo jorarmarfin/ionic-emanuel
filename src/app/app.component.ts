@@ -8,6 +8,7 @@ import { Menu } from './inerfaces/interfaces';
 import { LocalService } from './services/local.service';
 import { DrupalService } from './services/drupal.service';
 import { Storage } from '@ionic/storage';
+import { FirebaseService } from './services/firebase.service';
 
 @Component({
   selector: 'app-root',
@@ -25,7 +26,8 @@ export class AppComponent {
     private statusBar: StatusBar,
     private local:LocalService,
     private drupal:DrupalService,
-    private storage:Storage
+    private storage:Storage,
+    private firebase:FirebaseService
   ) {
     this.initializeApp();
   }
@@ -44,6 +46,6 @@ export class AppComponent {
     });
   }
   logout(){
-    this.drupal.logout();
+    this.firebase.logout();
   }
 }

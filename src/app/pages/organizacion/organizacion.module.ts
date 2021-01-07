@@ -4,21 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CumplesPageRoutingModule } from './cumples-routing.module';
+import { OrganizacionPageRoutingModule } from './organizacion-routing.module';
 
-import { CumplesPage } from './cumples.page';
+import { OrganizacionPage } from './organizacion.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { PipesModule } from 'src/app/pipes/pipes.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CumplesPageRoutingModule,
-    ComponentsModule,
-    PipesModule
+    OrganizacionPageRoutingModule,
+    ComponentsModule
   ],
-  declarations: [CumplesPage]
+  declarations: [OrganizacionPage]
 })
-export class CumplesPageModule {}
+export class OrganizacionPageModule {}

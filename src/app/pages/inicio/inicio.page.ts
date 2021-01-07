@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
-import { Calendario, Cumples, Temas } from 'src/app/inerfaces/interfaces';
+import { Avisos, Calendario, Cronograma, Cumples, Temas } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
+import { FirebaseService } from 'src/app/services/firebase.service';
 import { EventoPage } from '../evento/evento.page';
+
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-inicio',
@@ -26,18 +29,35 @@ export class InicioPage implements OnInit {
   temas:Temas;
   cumples:Cumples;
   calendario:Calendario;
+  avisos:Avisos[]=[];
+  cronograma:Cronograma[]=[];
+  swC = false;
 
   constructor(
     private drupal:DrupalService, 
     private router:Router,
     private menu: MenuController,
-    private modalCtrl:ModalController
+    private modalCtrl:ModalController,
+    private firebase:FirebaseService
     ) {
       this.menu.enable(true, 'MainMenu');
      }
 
   ngOnInit() {
-    this.cargaData();
+    this.cargaAvisos();
+    this.cargaCronograma();
+    
+  }
+  cargaCronograma(){
+    this.firebase.getCronograma().subscribe(resp=>{
+      this.cronograma = resp;
+      this.swC = Boolean(resp[0].activo);
+    });
+  }
+  cargaAvisos(){
+    this.firebase.getAvisos().subscribe(resp=>{
+      this.avisos = resp;
+    });
   }
   cargaData(){
     this.drupal.getTemasPortada().subscribe(resp=>{

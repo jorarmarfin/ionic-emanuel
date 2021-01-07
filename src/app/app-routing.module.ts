@@ -63,6 +63,18 @@ const routes: Routes = [
   {
     path: 'evento',
     loadChildren: () => import('./pages/evento/evento.module').then( m => m.EventoPageModule)
+  },
+  {
+    path: 'emanuel',
+    loadChildren: () => import('./pages/emanuel/emanuel.module').then( m => m.EmanuelPageModule)
+  },
+  {
+    path: 'servicios',
+    loadChildren: () => import('./pages/servicios/servicios.module').then( m => m.ServiciosPageModule)
+  },
+  {
+    path: 'organizacion',
+    loadChildren: () => import('./pages/organizacion/organizacion.module').then( m => m.OrganizacionPageModule)
   }
 ];
 

@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "apps-go-62c81": {
+      "hosting": {
+        "app": [
+          "apps-go-62c81"
+        ]
+      }
+    }
+  }
+}

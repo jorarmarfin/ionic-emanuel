@@ -11,57 +11,110 @@
 </ion-header>
 
 <ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  <ion-text color="primary" class="title-section">
-    <h2>Tema de los Sábados</h2>
-  </ion-text>
-  <ion-slides [options]="slideOpts">
-    <ion-slide *ngFor="let item of temas; let i=index" (click)="RedirigeTema(item.titulo,item.enlace)" >
-      <ion-card>
-        <img [src]="item.enlace|imgyoutube">
-        <ion-card-header>
-          <ion-card-title class="title-small aling-start">{{ item.titulo }}</ion-card-title>
-        </ion-card-header>
-      </ion-card>
-    </ion-slide>
-  </ion-slides>
 
-  <div class="mycontainer-blue ion-padding">
-    <h2>Cumpleaños del mes</h2>
-    <p>Lista de los cumpleaños del mes</p>
-    <ion-slides [options]="slideOpts2">
-      <ion-slide *ngFor="let item of cumples">
-        <div>
-          <img class="slide-img-alto" src="{{ item.imagen }}">
-          <span class="ja-font-size-15">{{ item.nombre_completo }}</span><br>
-          <span class="ja-font-size-15">{{ item.cumple }}</span>
-        </div>
-      </ion-slide>
-    </ion-slides>
-  </div>
-  <ion-text color="primary" class="title-section">
-    <h2>Actividades mas próximas</h2>
-  </ion-text>
-  <ion-list>
-    <ion-card *ngFor="let item of calendario; let i=index" (click)="presentModal(i)">
-      <ion-item lines="none" detail="true">
-        <ion-thumbnail slot="start">
-          <img [src]="item.tipo_evento|imgcalendario">      
-        </ion-thumbnail>
-        <ion-label>
-          <ion-text color="dark" class="ion-text-wrap">
-            <p class="evento-title">{{ item.titulo }}</p>
-          </ion-text>
-          <p>{{ item.fecha }}</p>
-          <p>{{ item.resumen }}</p>
-  
-        </ion-label>
+  <ion-card color="medium" *ngIf="swC">
+    <ion-card-header>
+      <ion-card-title>Cronograma del sabado </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item *ngFor="let item of cronograma">
+        <ion-label>{{ item.hora }}</ion-label>
       </ion-item>
-    </ion-card>
-    <br>
+    </ion-card-content>
+  </ion-card>
 
-  </ion-list>
+  <ion-card color="{{ aviso.color }}" *ngFor="let aviso of avisos">
+    <ion-card-header>
+      <ion-card-subtitle>{{ aviso.tipo }}</ion-card-subtitle>
+      <ion-card-title>{{ aviso.titulo }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ aviso.descripcion }}
+      <p [innerHTML]="aviso.html"></p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/emanuel" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="add" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Emanuel
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/temas" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="layers" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Temas
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/cumples" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="gift" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Cumpleaños
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/hermanos" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="people" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Hermanos
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/calendario" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="calendar" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Calendario
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/zoom" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="arrow-redo" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Enlaces
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6" size-sm="4" size-lg="2">
+        <ion-card routerLink="/organizacion" color="tertiary">
+          <ion-card-content class="ion-text-center">
+            <ion-icon slot="start" name="bookmarks" class="my-font-80"></ion-icon>
+            <br>
+            <ion-text color="light" class="my-font-15">
+              Organización
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 
 </ion-content>
