@@ -12,8 +12,7 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
-    canLoad:[UsuarioGuard]
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
   },
   {
     path: 'temas',
@@ -75,6 +74,42 @@ const routes: Routes = [
   {
     path: 'organizacion',
     loadChildren: () => import('./pages/organizacion/organizacion.module').then( m => m.OrganizacionPageModule)
+  },
+  {
+    path: 'historia',
+    loadChildren: () => import('./pages/historia/historia.module').then( m => m.HistoriaPageModule)
+  },
+  {
+    path: 'nuestrosservicios',
+    loadChildren: () => import('./pages/nuestrosservicios/nuestrosservicios.module').then( m => m.NuestrosserviciosPageModule)
+  },
+  {
+    path: 'hacemos',
+    loadChildren: () => import('./pages/hacemos/hacemos.module').then( m => m.HacemosPageModule)
+  },
+  {
+    path: 'comunidad',
+    loadChildren: () => import('./pages/comunidad/comunidad.module').then( m => m.ComunidadPageModule)
+  },
+  {
+    path: 'formacion',
+    loadChildren: () => import('./pages/formacion/formacion.module').then( m => m.FormacionPageModule)
+  },
+  {
+    path: 'espiritualidad',
+    loadChildren: () => import('./pages/espiritualidad/espiritualidad.module').then( m => m.EspiritualidadPageModule)
+  },
+  {
+    path: 'recursos',
+    loadChildren: () => import('./pages/recursos/recursos.module').then( m => m.RecursosPageModule)
+  },
+  {
+    path: 'donaciones',
+    loadChildren: () => import('./pages/donaciones/donaciones.module').then( m => m.DonacionesPageModule)
+  },
+  {
+    path: 'inbox',
+    loadChildren: () => import('./pages/inbox/inbox.module').then( m => m.InboxPageModule)
   }
 ];
 

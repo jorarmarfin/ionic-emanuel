@@ -14,9 +14,9 @@ export class EmanuelPage implements OnInit {
   constructor(private firebase:FirebaseService) { }
 
   ngOnInit() {
-    this.firebase.getEmanuel().subscribe(resp=>{
-      this.emanuel = resp[0];
-    })
+    // this.firebase.getEmanuel().subscribe(resp=>{
+    //   this.emanuel = resp[0];
+    // })
 
   }
 

@@ -32,6 +32,17 @@ export class InicioPage implements OnInit {
   avisos:Avisos[]=[];
   cronograma:Cronograma[]=[];
   swC = false;
+  public Botones = [
+    {titulo: "Sobre Emanuel",imagen:"../assets/icon/historia.jpg",ruta:"/emanuel"},
+    {titulo: "Comunidad",imagen:"../assets/icon/comunidad.jpg",ruta:"/comunidad"},
+    {titulo: "Hermanos",imagen:"../assets/icon/hermanos.jpg",ruta:"/hermanos"},
+    {titulo: "Cumpleaños",imagen:"../assets/icon/cumples.jpg",ruta:"/cumples"},
+    {titulo: "Formacion",imagen:"../assets/icon/formacion.jpg",ruta:"/formacion"},
+    {titulo: "Espiritualidad",imagen:"../assets/icon/espiritualidad.jpg",ruta:"/espiritualidad"},
+    {titulo: "Recursos",imagen:"../assets/icon/historia.jpg",ruta:"/recursos"},
+    {titulo: "Donaciones",imagen:"../assets/icon/donaciones.jpg",ruta:"/donaciones"},
+    {titulo: "Enlaces",imagen:"../assets/icon/enlaces.jpg",ruta:"/zoom"},
+  ]
 
   constructor(
     private drupal:DrupalService, 
@@ -49,15 +60,15 @@ export class InicioPage implements OnInit {
     
   }
   cargaCronograma(){
-    this.firebase.getCronograma().subscribe(resp=>{
-      this.cronograma = resp;
-      this.swC = Boolean(resp[0].activo);
-    });
+    // this.firebase.getCronograma().subscribe(resp=>{
+    //   this.cronograma = resp;
+    //   this.swC = Boolean(resp[0].activo);
+    // });
   }
   cargaAvisos(){
-    this.firebase.getAvisos().subscribe(resp=>{
-      this.avisos = resp;
-    });
+    // this.firebase.getAvisos().subscribe(resp=>{
+    //   this.avisos = resp;
+    // });
   }
   cargaData(){
     this.drupal.getTemasPortada().subscribe(resp=>{

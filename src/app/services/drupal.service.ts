@@ -18,6 +18,10 @@ const httpHeader = {
 @Injectable({
   providedIn: 'root'
 })
+/**  
+ * 70 grupo
+ * 71 imagen portada
+ */
 export class DrupalService {
 
   token:string=null;
