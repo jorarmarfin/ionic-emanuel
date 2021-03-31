@@ -1,21 +1,42 @@
-<app-header titulo="Dios con nosotros"></app-header>
-
+<app-header titulo="Sobre Emanuel"></app-header>
+<div class="imagen-header" style="background-image: url('{{ emanuel.imagen }}')"></div>
 <ion-content>
-<ion-card color="medium">
-  <ion-card-header>
-    <ion-card-title>Emanuel</ion-card-title>
+<ion-card>
+  <ion-card-header class="ion-text-center">
+    <ion-card-title ><strong>El grupo de oración Emanuel</strong></ion-card-title>
   </ion-card-header>
-  <ion-card-content class="ion-text-justify">
-    Es un grupo de personas que se reunen en torno a Cristo, movidos y dirigidos guiados por el Espiritu Santo para compartir la fe y la vivencia cristiana, alabando a Dios Padre, Transformando sus vidas y edificandose mutuamente a imagen de Jesucristo y de su Evangeliio. Sus miembros deben tender hacia una madurez que los lleve a un compromiso mayor de pertenencia entre ellos y a la definicion de su apostolado (Hch 2, 42)
+  <ion-card-content class="ion-text-justify" [innerHTML]="emanuel.contenido">
   </ion-card-content>
 </ion-card>
 <br>
 <ion-card color="tertiary">
   <ion-card-header>
-    <ion-card-title>Coordinación general del grupo</ion-card-title>
+    <ion-card-title>Visión y Misión</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    {{ emanuel.coordinacion }}
+    <ion-text >
+      <p [innerHTML]="emanuel.vision_mision"></p>
+    </ion-text>
+  </ion-card-content>
+</ion-card>
+<ion-card color="success">
+  <ion-card-header>
+    <ion-card-title>Servicios que realizamos</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-text >
+      <p [innerHTML]="emanuel.adicional"></p>
+    </ion-text>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title><strong>Historia del Grupo</strong></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-text >
+      <p [innerHTML]="emanuel.historia"></p>
+    </ion-text>
   </ion-card-content>
 </ion-card>
 

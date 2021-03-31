@@ -4,7 +4,7 @@ import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { promise } from 'protractor';
 import { environment } from 'src/environments/environment';
-import { Calendario, Cumples, Hermanos, Recursos, Temas } from '../inerfaces/interfaces';
+import { Calendario, Cumples, Hermanos, Pagina, Recursos, Temas } from '../inerfaces/interfaces';
 import { UsuarioModel } from '../models/usuario.model';
 
 const URL = environment.url;
@@ -32,6 +32,10 @@ export class DrupalService {
     private storage:Storage,
     private navCtrl:NavController  
     ) { }
+
+  getPaginas(i:number){
+    return this.http.get<Pagina>(`${URL}/api/pagina/${i}?_format=json`);
+  }
   getTemasPortada(){
     return this.http.get<Temas>(`${URL}/api/recurso/tema_sabado?_format=json`);
   }

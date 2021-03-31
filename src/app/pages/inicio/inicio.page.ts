@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController, ModalController } from '@ionic/angular';
-import { Avisos, Calendario, Cronograma, Cumples, Temas } from 'src/app/inerfaces/interfaces';
+import { Avisos, Calendario, Cronograma, Cumples, Pagina, Temas } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { EventoPage } from '../evento/evento.page';
@@ -39,10 +39,11 @@ export class InicioPage implements OnInit {
     {titulo: "Cumpleaños",imagen:"../assets/icon/cumples.jpg",ruta:"/cumples"},
     {titulo: "Formacion",imagen:"../assets/icon/formacion.jpg",ruta:"/formacion"},
     {titulo: "Espiritualidad",imagen:"../assets/icon/espiritualidad.jpg",ruta:"/espiritualidad"},
-    {titulo: "Recursos",imagen:"../assets/icon/historia.jpg",ruta:"/recursos"},
+    {titulo: "Recursos",imagen:"../assets/icon/recursos.jpg",ruta:"/recursos"},
     {titulo: "Donaciones",imagen:"../assets/icon/donaciones.jpg",ruta:"/donaciones"},
     {titulo: "Enlaces",imagen:"../assets/icon/enlaces.jpg",ruta:"/zoom"},
   ]
+  inicio:Pagina[]=[];
 
   constructor(
     private drupal:DrupalService, 
@@ -55,8 +56,11 @@ export class InicioPage implements OnInit {
      }
 
   ngOnInit() {
-    this.cargaAvisos();
-    this.cargaCronograma();
+    // this.cargaAvisos();
+    // this.cargaCronograma();
+    this.drupal.getPaginas(71).subscribe(resp=>{
+      this.inicio = resp[0];
+    });
     
   }
   cargaCronograma(){

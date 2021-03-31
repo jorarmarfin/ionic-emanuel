@@ -73,3 +73,11 @@ export interface Cronograma {
   hora?:string;
   activo?:string;
 }
+export interface Pagina {
+  nombre: string;
+  contenido: string;
+  historia?: string;
+  imagen: string;
+  vision_mision: string;
+  adicional: string;
+}
