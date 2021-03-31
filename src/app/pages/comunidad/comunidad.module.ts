@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ComunidadPageRoutingModule } from './comunidad-routing.module';
 
 import { ComunidadPage } from './comunidad.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ComunidadPageRoutingModule
+    ComunidadPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [ComunidadPage]
 })

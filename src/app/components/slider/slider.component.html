@@ -1,0 +1,6 @@
+<ion-slides  [options]="slideOpts">
+  <ion-slide *ngFor="let item of imagenes">
+    <ion-card class="img-slider" style="background-image: url('{{ item.imagen }}');">
+    </ion-card>
+  </ion-slide>
+</ion-slides>

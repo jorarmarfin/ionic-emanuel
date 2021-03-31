@@ -39,9 +39,8 @@ export class DrupalService {
   getTemasPortada(){
     return this.http.get<Temas>(`${URL}/api/recurso/tema_sabado?_format=json`);
   }
-  getCumplesDelMes(){
-    var f = new Date();
-    return this.http.get<Cumples>(`${URL}/api/cumple/${f.getMonth()+1}?_format=json`);
+  getCumplesDelMes(mes:string){
+    return this.http.get<Cumples>(`${URL}/api/cumple/${mes}?_format=json`);
   }
   getCumples(){
     return this.http.get<Cumples>(`${URL}/api/cumple/mes?_format=json`);

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cumples, Hermanos } from 'src/app/inerfaces/interfaces';
+import { Cumples, Hermanos, Meses } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
-import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-cumples',
@@ -10,18 +9,38 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class CumplesPage implements OnInit {
 
-  hermanos:Hermanos[]=[];
+  hermanos:Hermanos;
+  busqueda:Hermanos;
+  meses:Meses[]=[
+      {nombre:"Enero",valor:"01"},
+      {nombre:"Febrero",valor:"02"},
+      {nombre:"Marzo",valor:"03"},
+      {nombre:"Abril",valor:"04"},
+      {nombre:"Mayo",valor:"05"},
+      {nombre:"Junio",valor:"06"},
+      {nombre:"Julio",valor:"07"},
+      {nombre:"Agosto",valor:"08"},
+      {nombre:"Setiembre",valor:"09"},
+      {nombre:"Octubre",valor:"10"},
+      {nombre:"Noviembre",valor:"11"},
+      {nombre:"Diciembre",valor:"12"},
+  ];
 
-  constructor(private drupal:DrupalService,private firebase:FirebaseService) { }
+  constructor(private drupal:DrupalService) { }
 
   ngOnInit() {
-
-    this.firebase.getCumples().subscribe(resp=>{
+    var f = new Date();
+    let mes = (f.getMonth()+1).toString().padStart(2,"0");
+    this.drupal.getCumplesDelMes(mes).subscribe(resp=>{
       this.hermanos = resp;
     });
-    // this.drupal.getCumples().subscribe(resp=>{
-    //   this.cumples = resp;
-    // });
+    
   }
+  onChange(opt:string){
+    this.drupal.getCumplesDelMes(opt).subscribe(resp=>{
+        this.busqueda = resp;
+      });
+  }
+
 
 }

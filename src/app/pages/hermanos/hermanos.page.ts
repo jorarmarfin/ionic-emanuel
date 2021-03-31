@@ -15,8 +15,8 @@ export class HermanosPage implements OnInit {
   constructor(private drupal:DrupalService, private firebase:FirebaseService) { }
 
   ngOnInit() {
-    this.firebase.getHermanos().subscribe(resp=>{
-      this.hermanos = resp;
+    this.drupal.getHermanos().subscribe(resp=>{
+      this.hermanos = resp; 
     });
   }
 

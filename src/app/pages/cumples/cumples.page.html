@@ -1,24 +1,31 @@
 <app-header titulo="Cumpleaños del Grupo"></app-header>
 
 <ion-content >
-        <ion-list-header>
-            <ion-label>Aquí podremos ver la lista de cumpleaños del mes</ion-label>
-        </ion-list-header>
-        <ion-grid fixed>
-            <ion-row>
-                <ion-col size="6" *ngFor="let item of hermanos">
-                    <ion-card>
-                        <img [src]="item.imagen|noimagen" />
-                        <ion-card-header>
-                            <ion-card-subtitle>{{ item.apellidos }}</ion-card-subtitle>
-                            <ion-card-title>{{ item.nombres }}</ion-card-title>
-                        </ion-card-header>
-                        <ion-card-content>
-                            <h1>{{ item.fecha_nacimiento | date:'dd LLLL':'UTC':'es'  }}</h1>
-                            
-                        </ion-card-content>
-                    </ion-card>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
+    <div class="imagen-header" style="background-image: url('../assets/icon/cumples.jpg')"></div>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title><strong>Los cumpleaños de este mes del grupo son</strong></ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ul>
+                <li *ngFor="let item of hermanos"> {{ item.nombre_completo }} ( {{ item.cumple }})</li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-item>
+        <ion-label>Meses</ion-label>
+        <ion-select placeholder="Elegir un mes" #C (ionChange)="onChange(C.value)">
+          <ion-select-option *ngFor="let mes of meses" value="{{ mes.valor }}"> {{ mes.nombre }}</ion-select-option>
+        </ion-select>
+    </ion-item>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Cumpleaños Buscados</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ul>
+                <li *ngFor="let item of busqueda"> {{ item.nombre_completo }} ( {{ item.cumple }})</li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

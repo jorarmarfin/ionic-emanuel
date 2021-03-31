@@ -1,11 +1,12 @@
 <app-header titulo="Sobre Emanuel"></app-header>
-<div class="imagen-header" style="background-image: url('{{ emanuel.imagen }}')"></div>
+<div class="imagen-header" style="background-image: url('../assets/images/header-emanuel.jpg')"></div>
 <ion-content>
 <ion-card>
   <ion-card-header class="ion-text-center">
     <ion-card-title ><strong>El grupo de oración Emanuel</strong></ion-card-title>
   </ion-card-header>
-  <ion-card-content class="ion-text-justify" [innerHTML]="emanuel.contenido">
+  <ion-card-content class="ion-text-justify">
+    <p>Es un grupo de personas que se reunen en torno a Cristo, movidos y dirigidos guiados por el Espiritu Santo para compartir la fe y la vivencia cristiana, alabando a Dios Padre, Transformando sus vidas y edificandose mutuamente a imagen de Jesucristo y de su Evangeliio. Sus miembros deben tender hacia una madurez que los lleve a un compromiso mayor de pertenencia entre ellos y a la definicion de su apostolado (Hch 2, 42)</p>
   </ion-card-content>
 </ion-card>
 <br>
@@ -15,30 +16,46 @@
   </ion-card-header>
   <ion-card-content>
     <ion-text >
-      <p [innerHTML]="emanuel.vision_mision"></p>
+      <p>Nuestra Visión es ...</p>
+      <p>Nuestra Misión es ...</p>
     </ion-text>
   </ion-card-content>
 </ion-card>
-<ion-card color="success">
-  <ion-card-header>
-    <ion-card-title>Servicios que realizamos</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-text >
-      <p [innerHTML]="emanuel.adicional"></p>
-    </ion-text>
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-header>
-    <ion-card-title><strong>Historia del Grupo</strong></ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <ion-text >
-      <p [innerHTML]="emanuel.historia"></p>
-    </ion-text>
-  </ion-card-content>
-</ion-card>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="6" size-sm="4" size-lg="2">
+      <ion-card routerLink="/historia">
+        <ion-card-content class="ion-text-center btn-opcion btn-fondo" style="background-image: url('../assets/icon/historia.jpg') ;">
+          <br><br><br>
+          <div class="btn-title">
+            La historia del Grupo
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6" size-sm="4" size-lg="2">
+      <ion-card routerLink="/hacemos">
+        <ion-card-content class="ion-text-center btn-opcion btn-fondo" style="background-image: url('../assets/icon/donaciones.jpg') ;">
+          <br><br><br>
+          <div class="btn-title">
+            Los servicios que realiza el grupo
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="6" size-sm="4" size-lg="2">
+      <ion-card routerLink="/organizacion">
+        <ion-card-content class="ion-text-center btn-opcion btn-fondo" style="background-image: url('../assets/icon/organizacion.jpg') ;">
+          <br><br><br>
+          <div class="btn-title">
+            Nuestra organización
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
 
 
 

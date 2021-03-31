@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HacemosPageRoutingModule } from './hacemos-routing.module';
 
 import { HacemosPage } from './hacemos.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HacemosPageRoutingModule
+    HacemosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [HacemosPage]
 })

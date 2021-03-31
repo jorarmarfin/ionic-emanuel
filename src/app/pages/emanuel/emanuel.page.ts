@@ -9,20 +9,8 @@ import { DrupalService } from 'src/app/services/drupal.service';
 })
 export class EmanuelPage implements OnInit {
 
-  emanuel: Pagina[]=[];
-
-
   constructor(private drupal:DrupalService) { }
 
-  ngOnInit() {
-    this.drupal.getPaginas(70).subscribe(resp=>{
-      console.log(resp);
-      this.emanuel = resp[0];
-    });
-    // this.firebase.getEmanuel().subscribe(resp=>{
-    //   this.emanuel = resp[0];
-    // })
-
-  }
+  ngOnInit() { }
 
 }

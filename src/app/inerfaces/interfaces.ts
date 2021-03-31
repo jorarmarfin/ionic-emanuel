@@ -81,3 +81,7 @@ export interface Pagina {
   vision_mision: string;
   adicional: string;
 }
+export interface Meses {
+  nombre: string;
+  valor: string;
+}

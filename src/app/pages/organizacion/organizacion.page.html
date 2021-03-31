@@ -1,61 +1,23 @@
 <app-header titulo="Organización"></app-header>
 
 <ion-content>
+  <div class="imagen-header" style="background-image: url('../assets/icon/organizacion.jpg')"></div>
+<ion-card >
+  <ion-card-header>
+    <ion-card-title><strong>El grupo de Oración emanuel se organiza de la siguiente manera</strong></ion-card-title>
+  </ion-card-header>
+  <ion-card-content class="ion-text-justify">
+    <p>El grupo de oración está conformado por hermanos que buscan su crecimiento espiritual. Es por ello que está organizado por: responsables, servidores y la asamblea. El responsable es elegidos de tres postulantes bajo discernimiento y oración a cargo del responsable zonal y el diocesano de la RCC.  Los servidores son elegidos por el responsable en oración y discernimiento . Tanto los responsables como los servidores tienen la tarea de pastorear a los hermanos con el fin de ayudarlos en su crecimiento espiritual para lo cual recurren a la oración como principal herramienta. Ellos también se encargan de discernir los temas que necesitan los hermanos para su encuentro con Cristo y su formación integral.</p>
+  </ion-card-content>
+</ion-card>
 <ion-card>
-  <ion-card-content>
-    Actualmente el grupo de oración se organiza a travez de los siguientes servicios.
+  <ion-card-header>
+    <ion-card-title><strong>Equipo de Coordinación</strong></ion-card-title>
+  </ion-card-header>
+  <ion-card-content [innerHTML]="contenido">
   </ion-card-content>
 </ion-card>
 <!-- Servicios -->
-<!-- Intercesion -->
-<ion-card  color="danger">
-  <ion-card-header>
-    <ion-card-title>Servicio de Intercesión</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    Son hermanos que están llamados a ponerse en la brecha ante Dios para favor de la humianidad; la intercesion es la oración por los demás, dirigida con el poder del Espiritu Santo.
-  </ion-card-content>
-</ion-card>
-<!-- Formacion -->
-<ion-card  color="danger">
-  <ion-card-header>
-    <ion-card-title>Servicio de Formación</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    Son hermanos que están llamados a organizar la formación integral (espiritual, doctrinal y humana) de los miembros del grupo para su adecuado crecimiento.
-  </ion-card-content>
-</ion-card>
-<!-- Acogida -->
-<ion-card  color="danger">
-  <ion-card-header>
-    <ion-card-title>Servicio de Acogida</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    Son hermanos que se encargan de acoger a todos los miembros del grupo haciendoles sentir como en casa.
-  </ion-card-content>
-</ion-card>
-<!-- Liturgia -->
-<ion-card  color="danger">
-  <ion-card-header>
-    <ion-card-title>Servicio de Liturgia</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    Son hermanos llamados a velar por la organizacion y cumplimiento de los servicios que tenemos en los actos liturgicos de la capilla. La liturgia es servicio y participacion en la obra de Dios
-  </ion-card-content>
-</ion-card>
-<!-- Musica -->
-<ion-card  color="danger">
-  <ion-card-header>
-    <ion-card-title>Servicio de Música</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    Son hermanos llamados a ministrar la música, preparando los coazones de los hermanos al encuentro con el señor y a la alabanza.
-  </ion-card-content>
-</ion-card>
-<ion-card color="warning">
-  <ion-card-content>
-    Las ofrendas al grupo se pude realizar en la siguiente cuenta <br> <strong>{{ emanuel.cuenta }}</strong><br> a nombre de nuestra hermana <br> 
-    <strong>{{ emanuel.caja }}</strong> .
-  </ion-card-content>
-</ion-card>
+
+
 </ion-content>

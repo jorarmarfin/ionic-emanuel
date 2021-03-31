@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoriaPage implements OnInit {
 
+  myDate: String = new Date().toISOString();
   constructor() { }
 
   ngOnInit() {
