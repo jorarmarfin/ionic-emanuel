@@ -1,9 +1,19 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>formacion</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header titulo="Formacion"></app-header>
 
 <ion-content>
+  <div class="imagen-header" style="background-image: url('../assets/images/header-formacion.jpg')"></div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><strong>El grupo de oración Emanuel realiza diversos bloques de temas para una formación integral de sus miembros</strong></ion-card-title>
+    </ion-card-header>
+  </ion-card>
+  <ion-list>
+    <ion-item (click)="onClick(0)">
+      <ion-label>Temas realizados los días Sábados</ion-label>
+    </ion-item>
+    <ion-item (click)="onClick(1)">
+      <ion-label>Taller católico no negociable</ion-label>
+    </ion-item>
+  </ion-list>
 
 </ion-content>

@@ -75,44 +75,44 @@ export class InicioPage implements OnInit {
     // });
   }
   cargaData(){
-    this.drupal.getTemasPortada().subscribe(resp=>{
-      this.temas = resp;
-    });
-    this.drupal.getCumplesDelMes().subscribe(resp=>{
-      this.cumples = resp;
-    });
-    this.drupal.getCalendarioPortada().subscribe(resp=>{
-      this.calendario = resp;
-    });
+    // this.drupal.getTemasPortada().subscribe(resp=>{
+    //   this.temas = resp;
+    // });
+    // this.drupal.getCumplesDelMes().subscribe(resp=>{
+    //   this.cumples = resp;
+    // });
+    // this.drupal.getCalendarioPortada().subscribe(resp=>{
+    //   this.calendario = resp;
+    // });
   }
   async doRefresh(event){
     
-    await this.drupal.getTemasPortada().subscribe(resp=>{
-      this.temas = resp;
-    });
-    await this.drupal.getCumplesDelMes().subscribe(resp=>{
-      this.cumples = resp;
-    });
-    await this.drupal.getCalendarioPortada().subscribe(resp=>{
-      this.calendario = resp;
-    },err=>{},()=>{
-      event.target.complete();
-    });
+    // await this.drupal.getTemasPortada().subscribe(resp=>{
+    //   this.temas = resp;
+    // });
+    // await this.drupal.getCumplesDelMes().subscribe(resp=>{
+    //   this.cumples = resp;
+    // });
+    // await this.drupal.getCalendarioPortada().subscribe(resp=>{
+    //   this.calendario = resp;
+    // },err=>{},()=>{
+    //   event.target.complete();
+    // });
 
   }
   RedirigeTema(titulo:string,enlace:string){
-    let idyoutube = enlace.split('/',4)[3];
-    this.router.navigateByUrl(`tema/${titulo}/${idyoutube}`);
+    // let idyoutube = enlace.split('/',4)[3];
+    // this.router.navigateByUrl(`tema/${titulo}/${idyoutube}`);
 
   }
   async presentModal(i:string) {
-    const modal = await this.modalCtrl.create({
-      component: EventoPage,
-      componentProps: {
-        'evento': this.calendario[i],
-      }
-    });
-    return await modal.present();
+    // const modal = await this.modalCtrl.create({
+    //   component: EventoPage,
+    //   componentProps: {
+    //     'evento': this.calendario[i],
+    //   }
+    // });
+    // return await modal.present();
   }
 
 
