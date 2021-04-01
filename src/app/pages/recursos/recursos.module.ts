@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { RecursosPageRoutingModule } from './recursos-routing.module';
 
 import { RecursosPage } from './recursos.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RecursosPageRoutingModule
+    RecursosPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [RecursosPage]
 })

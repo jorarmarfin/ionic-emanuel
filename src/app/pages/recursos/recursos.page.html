@@ -1,9 +1,16 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>recursos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
+<app-header titulo="Recursos Cristianos"></app-header>
 <ion-content>
-
+  <div class="imagen-header" style="background-image: url('../assets/icon/recursos.jpg')"></div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>El grupo de oración Emanuel Brinda los siguientes recursos para sus miembros</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item detail *ngFor="let item of recursos; index as i" (click)="onClick(i)">
+          <ion-label>{{ item.nombre }} </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

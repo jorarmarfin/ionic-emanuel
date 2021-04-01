@@ -1,15 +1,20 @@
 <app-header titulo="Enlaces Zoom del grupo"></app-header>
 
 <ion-content >
-    <ion-list>
-        <ion-list-header>
-            <ion-label>Aquí podremos ver la lista de enlaces de Zoom</ion-label>
-        </ion-list-header>
-        <ion-item *ngFor="let item of recursos; let i=index" >
-            <ion-label>{{ item.titulo }}</ion-label>
-            <ion-button fill="clear" (click)="Action(i)">
-                <ion-icon slot="icon-only"  name="ellipsis-vertical"></ion-icon>
-            </ion-button>
-        </ion-item>
-    </ion-list>
+    <div class="imagen-header" style="background-image: url('../assets/icon/enlaces.jpg')"></div>
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-list-header>
+                    <ion-label>En esta sección se encuentran los enlaces que usamos para reunirnos</ion-label>
+                </ion-list-header>
+                <ion-item *ngFor="let item of recursos; let i=index" >
+                    <ion-label>{{ item.titulo }}</ion-label>
+                    <ion-button fill="clear" (click)="Action(i)">
+                        <ion-icon slot="icon-only"  name="ellipsis-vertical"></ion-icon>
+                    </ion-button>
+                </ion-item>
+            </ion-list>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

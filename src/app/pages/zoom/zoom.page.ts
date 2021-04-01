@@ -14,7 +14,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 })
 export class ZoomPage implements OnInit {
 
-  recursos:Recursos[]=[];
+  recursos:Recursos;
 
   constructor(private drupal:DrupalService,
     private firebase:FirebaseService,
@@ -23,7 +23,7 @@ export class ZoomPage implements OnInit {
     private socialSharing: SocialSharing) { }
 
   ngOnInit() {
-    this.firebase.getRecursos('zoom').subscribe(resp=>{
+    this.drupal.getRecursos('zoom').subscribe(resp=>{
       this.recursos = resp;
     });
   }

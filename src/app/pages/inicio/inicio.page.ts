@@ -40,8 +40,7 @@ export class InicioPage implements OnInit {
     {titulo: "Formacion",imagen:"../assets/icon/formacion.jpg",ruta:"/formacion"},
     {titulo: "Espiritualidad",imagen:"../assets/icon/espiritualidad.jpg",ruta:"/espiritualidad"},
     {titulo: "Recursos",imagen:"../assets/icon/recursos.jpg",ruta:"/recursos"},
-    {titulo: "Donaciones",imagen:"../assets/icon/donaciones.jpg",ruta:"/donaciones"},
-    {titulo: "Enlaces",imagen:"../assets/icon/enlaces.jpg",ruta:"/zoom"},
+    {titulo: "Donaciones",imagen:"../assets/icon/donaciones.jpg",ruta:"/donaciones"}
   ]
   inicio:Pagina[]=[];
 

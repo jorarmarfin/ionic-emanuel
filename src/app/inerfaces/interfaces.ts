@@ -22,7 +22,7 @@ export interface Temas {
 export interface Recursos {
     titulo?: string;
     enlace?: string;
-    tipo?: string;
+    texto_multiple?: string;
   }
 export interface Cumples {
     nombre_completo?: string;
