@@ -13,17 +13,17 @@
     <ion-card color="danger">
         <ion-card-content>
             <ion-label>Cuenta para El grupo de Oración</ion-label>
-            <p>BCP</p>
-            <p>VILLEGAS LA CHIRA MIRIAN NANCY</p>
-            <h1 style="color: white;">194-26377645-0-84</h1>
+            <p>{{ c1[0] }}</p> 
+            <p>{{ c1[1] }}</p>
+            <h1 style="color: white;">{{ c1[2] }}</h1>
         </ion-card-content>
     </ion-card>
-    <ion-card color="primary">
+    <ion-card color="primary" *ngIf="cnt>1">
         <ion-card-content>
             <ion-label>Cuenta para apoyo de  los hnos con Covid y otra ayuda</ion-label>
-            <p>BCP</p>
-            <p>MAYTA CAMPOS LUIS FERNANDO</p>
-            <h1 style="color: white;">191-2799720-0-98</h1>
+            <p>{{ c2[0] }}</p> 
+            <p>{{ c2[1] }}</p>
+            <h1 style="color: white;">{{ c2[2] }}</h1>
         </ion-card-content>
     </ion-card>
 </ion-content>
