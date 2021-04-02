@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { Recursos } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, LoadingController } from '@ionic/angular';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
@@ -15,16 +15,20 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 export class ZoomPage implements OnInit {
 
   recursos:Recursos;
+  loading: HTMLIonLoadingElement;
 
   constructor(private drupal:DrupalService,
     private firebase:FirebaseService,
     private iab:InAppBrowser,
     private actionSheetCtrl: ActionSheetController,
+    private loadingCtr:LoadingController,
     private socialSharing: SocialSharing) { }
 
   ngOnInit() {
+    this.presentLoading();
     this.drupal.getRecursos('zoom').subscribe(resp=>{
       this.recursos = resp;
+      this.loading.dismiss();
     });
   }
   abrirZoom(i:string){
@@ -55,6 +59,15 @@ export class ZoomPage implements OnInit {
         }]
       });
       await actionSheet.present();
+  }
+  async presentLoading() {
+    this.loading = await this.loadingCtr.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await this.loading.present();
+
   }
   
   

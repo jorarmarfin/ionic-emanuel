@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { DataEmanuel } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 
@@ -10,12 +11,25 @@ import { DrupalService } from 'src/app/services/drupal.service';
 export class OrganizacionPage implements OnInit {
 
   contenido="";
-  constructor(private drupal:DrupalService) { }
+  loading: HTMLIonLoadingElement;
+
+  constructor(private drupal:DrupalService, private loadingCtr:LoadingController) { }
 
   ngOnInit() {
+    this.presentLoading();
     this.drupal.getPaginas(72).subscribe(resp=>{
       this.contenido = resp[0].contenido;
+      this.loading.dismiss();
     });
+
+  }
+  async presentLoading() {
+    this.loading = await this.loadingCtr.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await this.loading.present();
 
   }
   /**

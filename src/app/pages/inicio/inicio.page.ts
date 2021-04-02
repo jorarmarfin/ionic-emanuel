@@ -37,12 +37,12 @@ export class InicioPage implements OnInit {
     {titulo: "Comunidad",imagen:"../assets/icon/comunidad.jpg",ruta:"/comunidad"},
     {titulo: "Hermanos",imagen:"../assets/icon/hermanos.jpg",ruta:"/hermanos"},
     {titulo: "Cumpleaños",imagen:"../assets/icon/cumples.jpg",ruta:"/cumples"},
-    {titulo: "Formacion",imagen:"../assets/icon/formacion.jpg",ruta:"/formacion"},
+    {titulo: "Formación",imagen:"../assets/icon/formacion.jpg",ruta:"/formacion"},
     {titulo: "Espiritualidad",imagen:"../assets/icon/espiritualidad.jpg",ruta:"/espiritualidad"},
     {titulo: "Recursos",imagen:"../assets/icon/recursos.jpg",ruta:"/recursos"},
     {titulo: "Donaciones",imagen:"../assets/icon/donaciones.jpg",ruta:"/donaciones"}
   ]
-  inicio:Pagina[]=[];
+  imagen:string;
 
   constructor(
     private drupal:DrupalService, 
@@ -58,7 +58,7 @@ export class InicioPage implements OnInit {
     // this.cargaAvisos();
     // this.cargaCronograma();
     this.drupal.getPaginas(71).subscribe(resp=>{
-      this.inicio = resp[0];
+      this.imagen = resp[0].imagen;
     });
     
   }

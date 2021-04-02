@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { Cumples, Hermanos, Meses } from 'src/app/inerfaces/interfaces';
 import { DrupalService } from 'src/app/services/drupal.service';
 
@@ -25,21 +26,35 @@ export class CumplesPage implements OnInit {
       {nombre:"Noviembre",valor:"11"},
       {nombre:"Diciembre",valor:"12"},
   ];
+  loading: HTMLIonLoadingElement;
 
-  constructor(private drupal:DrupalService) { }
+  constructor(private drupal:DrupalService, private loadingCtr:LoadingController) { }
 
   ngOnInit() {
+    this.presentLoading();
     var f = new Date();
     let mes = (f.getMonth()+1).toString().padStart(2,"0");
     this.drupal.getCumplesDelMes(mes).subscribe(resp=>{
       this.hermanos = resp;
+      this.loading.dismiss();
     });
     
   }
   onChange(opt:string){
+    this.presentLoading();
     this.drupal.getCumplesDelMes(opt).subscribe(resp=>{
         this.busqueda = resp;
+        this.loading.dismiss();
       });
+  }
+  async presentLoading() {
+    this.loading = await this.loadingCtr.create({
+      cssClass: 'my-custom-class',
+      message: 'Cargando...',
+      duration: 2000
+    });
+    await this.loading.present();
+
   }
 
 

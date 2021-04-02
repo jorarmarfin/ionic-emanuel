@@ -76,10 +76,8 @@ export interface Cronograma {
 export interface Pagina {
   nombre: string;
   contenido: string;
-  historia?: string;
-  imagen: string;
-  vision_mision: string;
-  adicional: string;
+  imagen?: string;
+  texto_multiple?: string;
 }
 export interface Meses {
   nombre: string;
