@@ -51,6 +51,10 @@ ion-content{
 }
 body{
     font-family: "Inter", sans-serif;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
 }
 .mycontainer-blue{
     display: block;

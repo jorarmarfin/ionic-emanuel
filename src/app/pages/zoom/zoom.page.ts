@@ -35,9 +35,8 @@ export class ZoomPage implements OnInit {
     const browser = this.iab.create(this.recursos[i].enlace,'_system');
   }
   copiarLink(i:string){
-    
     this.socialSharing.share(
-      this.recursos[i].titulo,'asunto','',this.recursos[i].enlace
+      this.recursos[i].body,'asunto','',this.recursos[i].enlace
     );
   }
   async Action(i:string) {

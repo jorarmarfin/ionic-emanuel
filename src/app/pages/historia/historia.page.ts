@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Historia } from 'src/app/inerfaces/interfaces';
+import { LocalService } from 'src/app/services/local.service';
 
 @Component({
   selector: 'app-historia',
@@ -8,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class HistoriaPage implements OnInit {
 
   myDate: String = new Date().toISOString();
-  constructor() { }
+  historia: Historia[]=[];
+  
+  constructor(private local:LocalService) { }
 
   ngOnInit() {
+    this.local.getHistoria().subscribe(resp=>{
+      this.historia = resp;
+
+    });
   }
 
 }

@@ -4,10 +4,15 @@
 <ion-card>
   <ion-card-header class="ion-text-center">
     <ion-card-title>Una breve historia del Grupo de oración</ion-card-title>
-    <ion-card-subtitle>1997 - {{ myDate| date:'yyyy' }}</ion-card-subtitle>
+    <ion-card-subtitle>1991 - {{ myDate| date:'yyyy' }}</ion-card-subtitle>
+  </ion-card-header>
+</ion-card>
+<ion-card *ngFor="let item of historia">
+  <ion-card-header>
+    <ion-card-title>{{ item.year }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
-    El grupo inicio
+    <p [innerHTML]="item.contenido"></p>
   </ion-card-content>
 </ion-card>
 </ion-content>

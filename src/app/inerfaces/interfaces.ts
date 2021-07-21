@@ -83,3 +83,8 @@ export interface Meses {
   nombre: string;
   valor: string;
 }
+
+export interface Historia {
+  year: string;
+  contenido: string;
+}

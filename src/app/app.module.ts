@@ -18,6 +18,7 @@ import { registerLocaleData } from '@angular/common';
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 registerLocaleData(localePy);
 
@@ -30,7 +31,8 @@ registerLocaleData(localePy);
     AppRoutingModule,
     HttpClientModule,
     IonicStorageModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
     
   ],
